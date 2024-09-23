@@ -1,4 +1,4 @@
-# fallacious-rooster
+# sturdy-memory
 A simple inventory management system for the Mongoose system of SV Sticky. 
 
 Fallacious rooster has been created as per request of the 18'th Commissioner of Internal Affairs, in order to keep track of the "black box" the loss of products in the Mongoose sometimes can be.
