@@ -1,5 +1,6 @@
 import psycopg2
 
+# TODO Add these into a .env file, this is suboptimally secure :)
 conn = psycopg2.connect(
     database="stocky",
     host="192.168.1.136",
