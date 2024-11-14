@@ -1,6 +1,6 @@
 from flask import Flask
 
-from server.src.web.routes.routes import import_routes
+from server.src.web.routing import import_routes
 from server.src.web.exception_handlers import import_handlers
 from server.src.database.setup import setup_table
 
