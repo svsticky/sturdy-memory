@@ -4,10 +4,11 @@ from werkzeug.exceptions import BadRequest
 from server.src.database.setup import db, conn
 from server.src.web.utils import filter_name
 
+
 # {
 #   "name": "waffles",
 # }
-def remove_product():
+def remove():
     data = request.json
     # To prevent injections, only accept product names with no spaces
     filtered_name = filter_name(data["name"])
@@ -15,9 +16,9 @@ def remove_product():
     db.execute(f"SELECT * FROM current_stock WHERE name LIKE '{filtered_name}' ")
 
     if len(db.fetchall()) == 0:
-        raise BadRequest
+        raise BadRequest(description=f"Product {filtered_name} doesn't exist")
 
     db.execute(f"DELETE FROM current_stock WHERE name LIKE '{filtered_name}' ")
     conn.commit()
 
-    return "200 OK"
+    return "200 OK\n"

@@ -1,5 +1,4 @@
 import werkzeug
-from time import time
 
 from werkzeug.exceptions import BadRequest, Forbidden, NotFound, MethodNotAllowed, ImATeapot
 
@@ -12,4 +11,4 @@ def import_handlers(app):
 
 
 def handle_error(e: werkzeug.exceptions.HTTPException):
-    return str(e).split(": ")[0]+"\n", int(e.code)
+    return f"{e.code} {str(e.description)}\n", e.code

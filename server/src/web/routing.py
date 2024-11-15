@@ -1,9 +1,13 @@
-from server.src.web.routes.add_product import add_product
-from server.src.web.routes.remove_product import remove_product
-from server.src.web.routes.transaction import transaction
+from server.src.web.routes.product.add import *
+from server.src.web.routes.product.remove import *
+from server.src.web.routes.product.status import *
+from server.src.web.routes.transaction import *
 
 
 def import_routes(app):
-    app.post("/add-product")(add_product)
-    app.post("/remove-product")(remove_product)
+    app.post("/product/add")(add)
+    app.delete("/product/remove")(remove)
     app.post("/transaction")(transaction)
+
+    app.get("/product/status")(status_get)
+    app.post("/product/status")(status_post)
