@@ -12,5 +12,4 @@ def import_handlers(app):
 
 
 def handle_error(e: werkzeug.exceptions.HTTPException):
-    print(time(), e)
     return str(e).split(": ")[0]+"\n", int(e.code)
