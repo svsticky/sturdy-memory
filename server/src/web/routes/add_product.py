@@ -4,7 +4,9 @@ from werkzeug.exceptions import BadRequest
 from server.src.database.setup import db, conn
 from server.src.web.utils import filter_name
 
-
+# {
+#   "name": "waffles",
+# }
 def add_product():
     data = request.json
     filtered_name = filter_name(data["name"])

@@ -4,7 +4,9 @@ from werkzeug.exceptions import BadRequest
 from server.src.database.setup import db, conn
 from server.src.web.utils import filter_name
 
-
+# {
+#   "name": "waffles",
+# }
 def remove_product():
     data = request.json
     # To prevent injections, only accept product names with no spaces
