@@ -20,7 +20,7 @@ def remove():
     db.execute(f"SELECT * FROM current_stock WHERE name LIKE '{filtered_name}' ")
 
     if len(db.fetchall()) == 0:
-        raise BadRequest(description=f"Product {filtered_name} doesn't exist")
+        raise BadRequest(f"Product {filtered_name} doesn't exist")
 
     db.execute(f"DELETE FROM current_stock WHERE name LIKE '{filtered_name}' ")
     conn.commit()

@@ -18,7 +18,7 @@ def status_get():
     query = db.fetchall()
 
     if len(query) == 0:
-        raise BadRequest(description=f"Product {filtered_name} doesn't exist")
+        raise BadRequest(f"Product {filtered_name} doesn't exist")
 
     return {"quantity": query[0][2]}, 200
 
@@ -29,7 +29,7 @@ def status_post():
 
     # Enforce that the quantity is a positive integer
     if not isinstance(data["quantity"], int) or data["quantity"] < 0:
-        raise BadRequest(description="Invalid quantity")
+        raise BadRequest("Invalid quantity")
 
     db.execute(f"UPDATE current_stock SET quantity = {data["quantity"]} WHERE name LIKE '{filtered_name}';")
     conn.commit()

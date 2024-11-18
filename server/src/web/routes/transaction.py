@@ -27,16 +27,16 @@ def transaction():
 
         # Enforce that the quantity is a positive integer
         if not isinstance(product["quantity"], int) or product["quantity"] < 0:
-            raise BadRequest(description="Invalid quantity")
+            raise BadRequest("Invalid quantity")
 
         filtered_name = filter_name(product["name"])
 
         db.execute(f"SELECT * FROM current_stock WHERE name LIKE '{filtered_name}'")
         query = db.fetchall()
         if len(query) == 0:
-            raise BadRequest(description=f"Product {filtered_name} not found")
+            raise BadRequest(f"Product {filtered_name} not found")
         if query[0][2] < product["quantity"]:
-            raise BadRequest(description=f"Not enough stock for {filtered_name}")
+            raise BadRequest(f"Not enough stock for {filtered_name}")
 
     # Deduct stock
     for product in data["items"]:

@@ -20,7 +20,7 @@ def add():
     db.execute(f"SELECT * FROM current_stock WHERE name LIKE '{filtered_name}' ")
 
     if len(db.fetchall()) != 0:
-        raise BadRequest(description=f"Product {filtered_name} already exists")
+        raise BadRequest(f"Product {filtered_name} already exists")
 
     db.execute(f"INSERT INTO current_stock (name, quantity) VALUES ('{filtered_name}', 0)")
     conn.commit()
