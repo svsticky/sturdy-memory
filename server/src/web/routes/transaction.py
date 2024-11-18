@@ -21,7 +21,7 @@ def transaction():
 
     # Check if all items exist in the database and if there's enough in stock
     for product in data["items"]:
-        if "name" not in data or "quantity" not in data:
+        if "name" not in product or "quantity" not in product:
             raise BadRequest("Bad JSON structure")
 
 
