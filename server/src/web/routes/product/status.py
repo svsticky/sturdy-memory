@@ -7,6 +7,10 @@ from server.src.web.utils import filter_name
 
 def status_get():
     data = request.json
+
+    if "name" not in data:
+        raise BadRequest("Bad JSON structure")
+
     filtered_name = filter_name(data["name"])
 
     db.execute(f"SELECT * FROM current_stock WHERE name LIKE '{filtered_name}' ")

@@ -10,6 +10,11 @@ from server.src.web.utils import filter_name
 # }
 def add():
     data = request.json
+
+    if "name" not in data:
+        raise BadRequest("Bad JSON structure")
+
+    # To prevent injections, only accept product names with no spaces
     filtered_name = filter_name(data["name"])
 
     db.execute(f"SELECT * FROM current_stock WHERE name LIKE '{filtered_name}' ")

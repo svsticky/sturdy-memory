@@ -10,6 +10,10 @@ from server.src.web.utils import filter_name
 # }
 def remove():
     data = request.json
+
+    if "name" not in data:
+        raise BadRequest("Bad JSON structure")
+
     # To prevent injections, only accept product names with no spaces
     filtered_name = filter_name(data["name"])
 

@@ -14,10 +14,17 @@ from server.src.web.utils import filter_name
 #   ]
 # }
 def transaction():
-    data = request.json
+    data: dict = request.json
+
+    if "items" not in data:
+        raise BadRequest("Bad JSON structure")
 
     # Check if all items exist in the database and if there's enough in stock
     for product in data["items"]:
+        if "name" not in data or "quantity" not in data:
+            raise BadRequest("Bad JSON structure")
+
+
         # Enforce that the quantity is a positive integer
         if not isinstance(product["quantity"], int) or product["quantity"] < 0:
             raise BadRequest(description="Invalid quantity")
