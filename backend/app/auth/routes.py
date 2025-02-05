@@ -4,7 +4,7 @@ import httpx
 from auth.dependencies import isBoard
 from config import (
     OIDC_AUTHORIZATION_URL, OIDC_TOKEN_URL, OIDC_USERINFO_URL, 
-    OIDC_CLIENT_ID, OIDC_CLIENT_SECRET, OIDC_REDIRECT_URI, SPECIFIC_USER_ID
+    OIDC_CLIENT_ID, OIDC_CLIENT_SECRET, OIDC_REDIRECT_URI
 )
 
 router = APIRouter(tags=["auth"])
@@ -68,6 +68,7 @@ async def callback(code: str):
     if not isBoard(user_response):
         # Redirect back to login if user is not authorized
         return RedirectResponse(url="/login")
+        #TODO: make sure this does not become infinite loop
 
     # Set access token in a secure HTTP-only cookie and redirect to the welcome page
     response = RedirectResponse(url="/welcome")

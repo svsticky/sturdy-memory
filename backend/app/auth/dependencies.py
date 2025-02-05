@@ -1,6 +1,5 @@
 from fastapi import Request, HTTPException
 import httpx
-from config import SPECIFIC_USER_ID
 
 async def require_valid_token(request: Request):
     """
