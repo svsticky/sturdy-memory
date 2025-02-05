@@ -1,0 +1,8 @@
+# Dockerfile voor Bun + Express frontend
+FROM oven/bun:latest
+WORKDIR /app
+
+COPY . .
+RUN bun install
+EXPOSE 3000
+CMD ["bun", "dev", "src/index.ts"] 
