@@ -1,6 +1,6 @@
 # Stocky
 
-**Stocky** is an inventory management API built with Python, FastAPI, and PostgreSQL. This project is designed to be run entirely inside a Docker-based development container, so all you need is [Docker](https://www.docker.com/) and [Visual Studio Code](https://code.visualstudio.com/) with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
+**Stocky** is an inventory management app+API+database built with Python, FastAPI, and PostgreSQL. This project is designed to be run entirely inside a Docker-based development container, so all you need is [Docker](https://www.docker.com/) and [Visual Studio Code](https://code.visualstudio.com/) with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
 
 
 ## Table of Contents
@@ -58,7 +58,13 @@ The frontend will be accessible at [http://localhost:3000](http://localhost:3000
 
 ## Testing
 
-Inside the Dev Container, you can run tests with [pytest](https://docs.pytest.org/):
+### API
+Inside the Dev Container, you can run tests for the API with [pytest](https://docs.pytest.org/):
+
+THIS IS STIL VERY MUCH TO DO!!! No testing has been added yet
+
+### Frontend
+Inside the Dev Container, you can run tests for the API with [bun](https://bun.sh/docs/cli/test)
 
 THIS IS STIL VERY MUCH TO DO!!! No testing has been added yet
 
