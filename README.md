@@ -7,11 +7,8 @@
 
 - [Getting Started](#getting-started)
 - [Running the Application](#running-the-application)
-- [Testing](#testing)
-- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 
 
@@ -56,17 +53,6 @@ docker compose up --build
 The API will be accessible at [http://localhost:8000](http://localhost:8000). You can view the interactive API documentation at [http://localhost:8000/docs](http://localhost:8000/docs) or [http://localhost:8000/redoc](http://localhost:8000/redoc).
 The frontend will be accessible at [http://localhost:3000](http://localhost:3000)
 
-## Testing
-
-### API
-Inside the Dev Container, you can run tests for the API with [pytest](https://docs.pytest.org/):
-
-THIS IS STIL VERY MUCH TO DO!!! No testing has been added yet
-
-### Frontend
-Inside the Dev Container, you can run tests for the API with [bun](https://bun.sh/docs/cli/test)
-
-THIS IS STIL VERY MUCH TO DO!!! No testing has been added yet
 
 ## Contributing
 
