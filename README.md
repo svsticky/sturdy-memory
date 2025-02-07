@@ -25,8 +25,8 @@
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/stocky.git
-   cd stocky
+   git clone https://github.com/svsticky/sturdy-memory.git`
+   cd sturdy-memory
    ```
 
 2. **Open in VS Code:**
