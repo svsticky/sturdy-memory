@@ -59,7 +59,7 @@ The frontend will be accessible at [http://localhost:3000](http://localhost:3000
 Contributions are welcome! To contribute:
 
 1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/YourFeature`.
+2. Create a new branch: `git checkout -b feat/your-feature`.
 3. Make your changes and confirm tests pass.
 4. Submit a pull request detailing your changes.
 
