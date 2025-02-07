@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from database import get_db_pool
 from auth.dependencies import require_valid_token
 
-router = APIRouter(tags=["general"])
+router = APIRouter()
 
 @router.get("/welcome")
 async def welcome(access_token: str = Depends(require_valid_token)):

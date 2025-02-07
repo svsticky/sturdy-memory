@@ -34,4 +34,4 @@ def isBoard(response: httpx.Response):
     """
     json = response.json()
     print(json)
-    return json.get("is_admin") == "True"
+    return json.get("is_admin") == True
