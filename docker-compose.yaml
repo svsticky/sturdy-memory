@@ -1,0 +1,33 @@
+services:
+  # frontend:
+  #   build: ./frontend
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
+  #   env_file:
+  #     - .env   # Load variables from the .env file
+  #   environment:
+  #     - API_URL=http://backend:8000
+  #   command: bun run src/index.ts  # Adjust based on your entry file
+
+  db:
+    build: ./db
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
